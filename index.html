@@ -14,6 +14,7 @@
  display: flex;
  justify-content: space-around;
  margin-top: 20px;
+ flex-wrap: wrap; /* Ensure images wrap to the next line on smaller screens */
  }
  .image-link {
  text-decoration: none;
@@ -21,10 +22,11 @@
  display: block;
  text-align: center;
  margin: 10px;
+ flex-basis: calc(33.33% - 20px); /* Set the width of each image to one-third of the container width */
+ max-width: 200px; /* Limit the width of each image */
  }
  .image-link img {
  width: 100%;
- max-width: 200px;
  height: auto;
  border: 1px solid #ddd;
  border-radius: 8px;
@@ -34,8 +36,8 @@
  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
  }
  @media screen and (min-width: 768px) {
- .image-link img {
- width: 200px;
+ .image-link {
+ flex-basis: calc(25% - 20px); /* Adjust width for larger screens */
  }
  }
  </style>
